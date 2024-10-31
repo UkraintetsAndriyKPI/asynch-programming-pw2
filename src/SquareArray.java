@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.concurrent.Callable;
 
 public class SquareArray implements Callable<Double[]> {
@@ -12,8 +13,8 @@ public class SquareArray implements Callable<Double[]> {
         for (int i = 0; i < array.length; i++) {
             array[i] = Math.pow(array[i], 2);
             array[i] = Math.round(array[i] * 100.) / 100.;
-            Main.resultSet.add(array[i]);
         }
+        Main.resultSet.addAll(Arrays.asList(array));
         return array;
     }
 }
